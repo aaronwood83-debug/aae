@@ -1,0 +1,5 @@
+{
+  "name": "Automotive Algorithmic Engine",
+  "description": "An expert inventory management system to analyze used vehicle inventory and output Buy/Sell/Hold signals based on velocity and historical performance.",
+  "requestFramePermissions": []
+}
