@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "analysis_date": "2026-01-20T21:14:28.651867",
+    "total_opportunities": 1,
+    "total_current_cost": 455000,
+    "total_expected_benefit": 209000.0,
+    "total_implementation_cost": 100000,
+    "portfolio_roi_percentage": 209.0,
+    "opportunities_by_tier": {
+      "Q1": 1
+    },
+    "top_3_opportunities": [
+      {
+        "process": "Contract Review Process",
+        "priority_score": 26.1,
+        "roi": 209.0
+      }
+    ]
+  },
+  "opportunities": [
+    {
+      "process_name": "Contract Review Process",
+      "opportunity_score": {
+        "volume_score": 5.2,
+        "time_score": 7.5,
+        "error_score": 7.7,
+        "consistency_score": 6,
+        "data_score": 8,
+        "complexity_score": 10,
+        "impact_score": 10,
+        "total_score": 54.5,
+        "priority_band": "Critical"
+      },
+      "readiness_score": {
+        "technical_score": 10,
+        "organizational_score": 10,
+        "ai_maturity_score": 7.0,
+        "combined_score": 9.0,
+        "status": "green"
+      },
+      "roi_analysis": {
+        "total_current_cost": 455000,
+        "expected_annual_benefit": 234000.0,
+        "implementation_cost": 100000,
+        "annual_ongoing_cost": 25000,
+        "net_annual_benefit": 209000.0,
+        "roi_percentage": 209.0,
+        "payback_months": 5.7,
+        "three_year_npv": 422500.0
+      },
+      "recommended_ai_capability": "Document Analysis",
+      "priority_score": 26.1,
+      "priority_tier": "Q1 - Quick Win",
+      "recommended_action": "Immediate implementation recommended",
+      "timeline": "Start within 30 days, complete in 8-12 weeks",
+      "key_risks": [
+        "High current error rate - may indicate process complexity"
+      ],
+      "next_steps": [
+        "Schedule discovery session with process owner",
+        "Develop detailed process documentation",
+        "Create proof-of-concept scope",
+        "Build initial ROI model with stakeholders",
+        "Present findings and recommendation"
+      ]
+    }
+  ]
+}

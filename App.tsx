@@ -8,9 +8,10 @@ import Header from './components/Header';
 import VehicleInputCard from './components/VehicleInputCard';
 import AnalysisDashboard from './components/AnalysisDashboard';
 import DashboardView from './components/DashboardView';
+import AIOpportunityAnalyzer from './components/AIOpportunityAnalyzer';
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'dashboard' | 'scorecard'>('dashboard');
+  const [view, setView] = useState<'dashboard' | 'scorecard' | 'ai-analyzer'>('dashboard');
   const [allAnalyses, setAllAnalyses] = useState<AnalysisResult[]>([]);
   const [selectedAnalysis, setSelectedAnalysis] = useState<AnalysisResult | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -50,6 +51,20 @@ const App: React.FC = () => {
   };
 
   const renderContent = () => {
+    if (view === 'ai-analyzer') {
+        return (
+            <div className="mt-8">
+                <button onClick={() => setView('dashboard')} className="mb-6 bg-gray-700 hover:bg-gray-600 text-gray-200 font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Back to Dashboard
+                </button>
+                <AIOpportunityAnalyzer />
+            </div>
+        );
+    }
+
     if (isLoading) {
       return (
         <div className="flex justify-center items-center h-full bg-gray-800 rounded-lg p-8 mt-8">
@@ -92,6 +107,14 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-gray-900 text-gray-200 flex flex-col items-center p-4 sm:p-6 lg:p-8">
       <div className="w-full max-w-7xl mx-auto">
         <Header />
+        <div className="flex justify-end mb-4">
+            <button
+                onClick={() => setView('ai-analyzer')}
+                className={`bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded transition-colors ${view === 'ai-analyzer' ? 'hidden' : ''}`}
+            >
+                AI Opportunity Analyzer
+            </button>
+        </div>
         <main>
           {renderContent()}
         </main>
